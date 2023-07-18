@@ -25,8 +25,6 @@
                     background-position: center;
                     background-repeat: no-repeat;
                     height: 100vh;
-
-
                 }
 
                 .container {
@@ -42,7 +40,6 @@
                 }
 
                 .open-source {
-
                     position: fixed;
                     left: 0;
                     right: 0;
@@ -66,31 +63,23 @@
                 a {
                     color: black;
                     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
                 }
 
                 li {
                     list-style-type: none;
                     margin-right: 90px;
                     color: black;
-
                 }
 
                 #date,
                 #description {
                     color: rgba(0, 0, 0, 0.8);
-
-
                 }
 
                 .shift {
                     padding-right: 150px;
-
-
                 }
-
-
-
+                
                 .temperature {
                     font-size: 90px;
                     font-family: cursive;
@@ -105,17 +94,13 @@
 
 
                 .units {
-
-
                     margin-left: 1px;
                     margin-bottom: 80px;
                     font-size: 20px;
                     position: absolute;
                     margin-top: 20px;
                 }
-
-
-
+                
                 span {
                     margin-bottom: -10px;
                 }
@@ -133,9 +118,6 @@
 
                 .wind {
                     padding-top: 47px;
-
-
-
                 }
 
 
@@ -154,11 +136,7 @@
                     font-family: cursive;
 
                 }
-
-
-
-
-
+                
                 #current-location-button {
 
                     color: white;
@@ -167,6 +145,29 @@
                 input[type="submit"] {
 
                     color: white;
+                }
+
+                .active-unit {
+
+                    text-decoration-style: double;
+
+
+                }
+
+                @media (max-width: 768px) {
+                    .temperature.temperature-value {
+                        font-size: 60px;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .weather-icon {
+                        font-size: 50px;
+                    }
+
+                    .units {
+                        font-size: 16px;
+                    }
                 }
             </style>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -232,7 +233,7 @@
                 </div>
             </div>
             <small class="open-source">
-                <a href="https://github.com/valeridev/project/blob/main/vc.html" target="_blank"> open-source code</a>
+                <a href="https://github.com/valeridev/" target="_blank"> open-source code</a>
                 by
                 Váleri Calhau
             </small>
@@ -319,7 +320,16 @@
                 let celsiusTemperature = parseInt(temperatureElement.innerHTML);
                 let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
                 temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+                let celsiusLink = document.querySelector("#celsius-link");
+                let fahrenheitLink = document.querySelector("#fahrenheit-link");
+                celsiusLink.classList.remove("active-unit");
+                fahrenheitLink.classList.add("active-unit");
+                celsiusLink.style.color = "";
+                fahrenheitLink.style.color = "#9AC0C8";
             }
+
+
+
 
             function convertToCelsius(event) {
                 event.preventDefault();
@@ -327,7 +337,15 @@
                 let fahrenheitTemperature = parseInt(temperatureElement.innerHTML);
                 let celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
                 temperatureElement.innerHTML = Math.round(celsiusTemperature);
+                let celsiusLink = document.querySelector("#celsius-link");
+                let fahrenheitLink = document.querySelector("#fahrenheit-link");
+                celsiusLink.classList.add("active-unit");
+                fahrenheitLink.classList.remove("active-unit");
+                celsiusLink.style.color = "#9AC0C8";
+                fahrenheitLink.style.color = "";
             }
+
+
 
             let dateElement = document.querySelector("#date");
             let currentTime = new Date();
@@ -382,10 +400,11 @@
                 }
             }
         </script>
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
             crossorigin="anonymous"></script>
+
+
     </body>
 
 </html>
