@@ -27,16 +27,25 @@
                     height: 100vh;
                 }
 
+
+
                 .container {
                     width: 100%;
                     height: 80vh;
                     padding: 10px 25px;
                     margin: 15px 15px -30px 15px;
-                    border: 0.5px solid antiquewhite;
-                    border-radius: 4px;
+
                     color: antiquewhite;
                     position: relative;
                     overflow: visible;
+                }
+
+                .weather-app-wrapper {
+                    padding-top: 120px;
+                    max-width: 500px;
+                    margin: 30px auto;
+                    color: antiquewhite;
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                 }
 
                 .open-source {
@@ -79,7 +88,7 @@
                 .shift {
                     padding-right: 150px;
                 }
-                
+
                 .temperature {
                     font-size: 90px;
                     font-family: cursive;
@@ -100,7 +109,7 @@
                     position: absolute;
                     margin-top: 20px;
                 }
-                
+
                 span {
                     margin-bottom: -10px;
                 }
@@ -136,7 +145,7 @@
                     font-family: cursive;
 
                 }
-                
+
                 #current-location-button {
 
                     color: white;
@@ -154,6 +163,8 @@
 
                 }
 
+
+
                 @media (max-width: 768px) {
                     .temperature.temperature-value {
                         font-size: 60px;
@@ -169,6 +180,88 @@
                         font-size: 16px;
                     }
                 }
+
+                a {
+
+                    text-decoration: none;
+
+                }
+
+                a:hover {
+                    color: black;
+                }
+
+                @media (max-width: 768px) {
+                    .temperature.temperature-value {
+                        font-size: 60px;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .weather-icon {
+                        font-size: 50px;
+                    }
+                }
+
+                .units {
+                    font-size: 16px;
+                }
+
+                @media (max-width: 768px) {
+
+                    /* Override Bootstrap button styles */
+                    .btn-primary,
+                    .btn {
+                        background-color: transparent !important;
+                        border: none !important;
+                        box-shadow: none !important;
+                    }
+
+                    /* Override Bootstrap button hover and focus styles */
+                    .btn-primary:hover,
+                    .btn-primary:focus,
+                    .btn:hover,
+                    .btn:focus {
+                        background-color: transparent !important;
+                        border: none !important;
+                        box-shadow: none !important;
+                    }
+                }
+
+
+
+
+                @media (max-width: 768px) {
+                    body {
+                        /* Adjust the font size and line height for better readability on smaller screens */
+                        font-size: 14px;
+                        line-height: 1.5;
+                    }
+
+                    .weather-app-wrapper {
+                        /* Center the app on smaller screens */
+                        max-width: 100%;
+                        margin: 0 auto;
+                    }
+
+                    .weather-app {
+                        /* Add some padding to the app container on smaller screens */
+                        padding: 10px;
+                    }
+
+                    .weather-temperature strong {
+                        /* Adjust the temperature font size for smaller screens */
+                        font-size: 40px;
+                    }
+
+                    .weather-forecast .col-2 {
+                        /* Adjust the width of forecast cards on smaller screens */
+                        flex-basis: 16.66%;
+                        max-width: 16.66%;
+                    }
+                }
+
+                /* Hide the "Search" button on smaller screens to save space */
             </style>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
                 integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
